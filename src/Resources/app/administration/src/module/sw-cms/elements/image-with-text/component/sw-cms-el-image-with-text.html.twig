@@ -1,0 +1,14 @@
+{% block sw_cms_element_dailymotion %}
+    <div class="sw-cms-preview-two-images-text">
+        <div class="image-wrapper">
+            <div class="image-text">
+                <div class="header-wrapper">
+                    <h4>{{ imageHeader }}</h4>
+                </div>
+                <p>{{ imageText }}</p>
+                <span>{{ imageLinkText }}</span>
+            </div>
+            <img :src="'/administration/static/img/cms/preview_mountain_small.jpg' | asset">
+        </div>
+    </div>
+{% endblock %}

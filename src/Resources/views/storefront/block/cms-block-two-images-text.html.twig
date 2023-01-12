@@ -1,0 +1,27 @@
+{% block two_images_text %}
+    {% set elements = cmsPage.sections.elements|first.blocks.elements[_key].slots.elements %}
+    <div class="cms-element-two-images-text">
+        {% for element in elements %}
+            <div class="image-wrapper">
+                <div class="image-text">
+                    {% if element.config["imageHeader"] %}
+                        <div class="header-wrapper">
+                            <h4>{{ element.config["imageHeader"].value|capitalize }}</h4>
+                            {% sw_icon 'arrow-right' %}
+                        </div>
+                    {% endif %}
+                    {% if element.config["imageText"] %}
+                        <p>{{ element.config["imageText"].value|capitalize }}</p>
+                    {% endif %}
+                    {% if element.config["imageLinkText"] and element.config["imageLink"] %}
+                        <a href="{{ element.config['imageLinkText'].value }}">{{ element.config["imageLinkText"].value|capitalize }}</a>
+                    {% endif %}
+                </div>
+                {% sw_thumbnails 'product-image' with {
+                    media: page.product.cover.media,
+                    sizes: sizes
+                } %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

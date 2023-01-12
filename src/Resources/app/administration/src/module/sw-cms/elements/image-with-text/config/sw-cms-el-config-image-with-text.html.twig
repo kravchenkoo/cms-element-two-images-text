@@ -1,0 +1,36 @@
+{% block sw_cms_element_text_image_link %}
+    <div>
+        <sw-text-field
+            v-model="imageHeader"
+            class="swag-dailymotion-field"
+            :label="$tc('sw-cms.elements.config.imageHeader.label')"
+            :placeholder="$tc('sw-cms.elements.config.imageHeader.placeholder')"
+            @input="onHeaderUpdate"
+            @change="onHeaderUpdate">
+        </sw-text-field>
+        <sw-text-field
+            v-model="imageText"
+            class="swag-dailymotion-field"
+            :label="$tc('sw-cms.elements.config.imageText.label')"
+            :placeholder="$tc('sw-cms.elements.config.imageText.placeholder')"
+            @input="onTextUpdate"
+            @change="onTextUpdate">
+        </sw-text-field>
+        <sw-text-field
+            v-model="imageLinkText"
+            class="swag-dailymotion-field"
+            :label="$tc('sw-cms.elements.config.imageLinkText.label')"
+            :placeholder="$tc('sw-cms.elements.config.imageLinkText.placeholder')"
+            @input="onLinkTextUpdate"
+            @change="onLinkTextUpdate">
+        </sw-text-field>
+        <sw-text-field
+            v-model="imageLink"
+            class="swag-dailymotion-field"
+            :label="$tc('sw-cms.elements.config.imageLink.label')"
+            :placeholder="$tc('sw-cms.elements.config.imageLink.placeholder')"
+            @input="onLinkUpdate"
+            @change="onLinkUpdate">
+        </sw-text-field>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{
+    "sw-cms": {
+        "elements": {
+            "config": {
+                "imageText": {
+                    "label": "Text",
+                    "placeholder": "Enter image text..."
+                },
+                "imageHeader": {
+                    "label": "Header",
+                    "placeholder": "Enter image header..."
+                },
+                "imageLinkText": {
+                    "label": "Link text",
+                    "placeholder": "Enter image link text..."
+                },
+                "imageLink": {
+                    "label": "Link",
+                    "placeholder": "Enter image link..."
+                }
+            },
+            "element": {
+                "label": "Custom image with text element"
+            },
+            "block": {
+                "label": "Two images with text"
+            }
+        }
+    }
+}
