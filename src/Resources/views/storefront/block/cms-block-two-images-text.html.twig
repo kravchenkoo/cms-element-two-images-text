@@ -17,8 +17,9 @@
                         <a href="{{ element.config['imageLinkText'].value }}">{{ element.config["imageLinkText"].value|capitalize }}</a>
                     {% endif %}
                 </div>
+                {% set tileImg = searchMedia([element.config.media.value], context.context) %}
                 {% sw_thumbnails 'product-image' with {
-                    media: page.product.cover.media,
+                    media: tileImg|first,
                     sizes: sizes
                 } %}
             </div>

@@ -24,5 +24,13 @@ Shopware.Service('cmsService').registerCmsElement({
             source: 'static',
             value: ''
         },
+        media: {
+            source: 'static',
+            value: null,
+            required: true,
+            entity: {
+                name: 'media',
+            },
+        },
     }
 });

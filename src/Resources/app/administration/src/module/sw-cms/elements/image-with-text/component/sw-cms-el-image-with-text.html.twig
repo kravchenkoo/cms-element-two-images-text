@@ -8,7 +8,10 @@
                 <p>{{ imageText }}</p>
                 <span>{{ imageLinkText }}</span>
             </div>
-            <img :src="'/administration/static/img/cms/preview_mountain_small.jpg' | asset">
+            <img
+                :src="mediaUrl"
+                alt=""
+            >
         </div>
     </div>
 {% endblock %}
