@@ -1,21 +1,45 @@
-$icon-width: 50px;
-$icon-height: 50px;
-.sw-cms-el-preview-dailymotion {
-    position: relative;
-
-    .sw-cms-el-preview-dailymotion-img {
-        display: block;
-        max-width: 100%;
-    }
-
-    .sw-cms-el-preview-dailymotion-icon {
-        $icon-height: 50px;
-        $icon-width: $icon-height;
-        position: absolute;
-        height: $icon-height;
-        width: $icon-width;
-
-        left: calc(50% - $icon-width/2);
-        top: calc(50% - $icon-height/2);
+.sw-cms-preview-element-two-images-text {
+    height: 100%;
+    .image-wrapper {
+        height: 100%;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-color: rgba(0,0,0,.5);
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .image-text {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            color: #fff;
+            font-size: .8rem;
+            h6 {
+                color: #fff;
+                line-height: 10px;
+                font-size: inherit;
+            }
+            p {
+                margin-top: auto;
+            }
+            span {
+                text-decoration: underline;
+            }
+        }
     }
 }

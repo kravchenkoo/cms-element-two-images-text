@@ -58,6 +58,23 @@ Component.register('sw-cms-el-image-with-text', {
             return Filter.getByName('asset');
         },
     },
+    watch: {
+        cmsPageState: {
+            deep: true,
+            handler() {
+                this.$forceUpdate();
+            },
+        },
+
+        mediaConfigValue(value) {
+            const mediaId = this.element?.data?.media?.id;
+            const isSourceStatic = this.element?.config?.media?.source === 'static';
+
+            if (isSourceStatic && mediaId && value !== mediaId) {
+                this.element.config.media.value = mediaId;
+            }
+        },
+    },
 
     created() {
         this.createdComponent();
@@ -66,6 +83,46 @@ Component.register('sw-cms-el-image-with-text', {
     methods: {
         createdComponent() {
             this.initElementConfig('image-with-text');
-        }
+            this.initElementData('image-with-text');
+        },
+
+        onHeaderBlur(content) {
+            this.emitHeaderChanges(content);
+        },
+        onHeaderInput(content) {
+            this.emitHeaderChanges(content);
+        },
+        emitHeaderChanges(content) {
+            if (content !== this.element.config.imageHeader.value) {
+                this.element.config.imageHeader.value = content;
+                this.$emit('element-update', this.element);
+            }
+        },
+
+        onTextBlur(content) {
+            this.emitTextChanges(content);
+        },
+        onTextInput(content) {
+            this.emitTextChanges(content);
+        },
+        emitTextChanges(content) {
+            if (content !== this.element.config.imageText.value) {
+                this.element.config.imageText.value = content;
+                this.$emit('element-update', this.element);
+            }
+        },
+
+        onLinkBlur(content) {
+            this.emitLinkChanges(content);
+        },
+        onLinkInput(content) {
+            this.emitLinkChanges(content);
+        },
+        emitLinkChanges(content) {
+            if (content !== this.element.config.imageLinkText.value) {
+                this.element.config.imageLinkText.value = content;
+                this.$emit('element-update', this.element);
+            }
+        },
     }
 });

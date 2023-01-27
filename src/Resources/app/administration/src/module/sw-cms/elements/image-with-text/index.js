@@ -10,19 +10,19 @@ Shopware.Service('cmsService').registerCmsElement({
     defaultConfig: {
         imageHeader: {
             source: 'static',
-            value: ''
+            value: 'Header'
         },
         imageText: {
             source: 'static',
-            value: ''
+            value: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, odit?'
         },
         imageLinkText: {
             source: 'static',
-            value: ''
+            value: 'Link Text'
         },
         imageLink: {
             source: 'static',
-            value: ''
+            value: 'Link'
         },
         media: {
             source: 'static',

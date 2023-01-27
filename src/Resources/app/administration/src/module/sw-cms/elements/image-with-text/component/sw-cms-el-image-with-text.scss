@@ -31,24 +31,27 @@
             font-size: 1.3rem;
             .header-wrapper {
                 display: flex;
-                h4 {
+                .sw-text-editor__content {
                     color: #fff;
-                    line-height: 10px;
-                    font-size: 1.5rem;
-                }
-                .icon {
-                    color: #fff;
-                    margin-left: 10px;
-                    svg {
-                        top: -2px;
-                    }
+                    line-height: 2.5rem;
+                    font-size: 1.9rem;
+                    font-weight: 600;
                 }
             }
-            h6 {
-
+            .sw-text-editor {
+                box-sizing: border-box;
+                cursor: text;
+                border: 1px solid transparent;
+                &:hover {
+                    border: 1px solid #189eff;
+                }
+                .sw-text-editor__content {
+                    background: transparent;
+                }
             }
-            p {
+            .text-wrapper {
                 margin-top: auto;
+                margin-bottom: 12px;
             }
             span {
                 text-decoration: underline;

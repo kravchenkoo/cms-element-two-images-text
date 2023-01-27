@@ -3,10 +3,36 @@
         <div class="image-wrapper">
             <div class="image-text">
                 <div class="header-wrapper">
-                    <h4>{{ imageHeader }}</h4>
+                    <sw-text-editor
+                        v-model="element.config.imageHeader.value"
+                        :disabled="disabled"
+                        :allow-inline-data-mapping="true"
+                        :is-inline-edit="true"
+                        sanitize-input
+                        @blur="onHeaderBlur"
+                        @input="onHeaderInput"
+                    />
                 </div>
-                <p>{{ imageText }}</p>
-                <span>{{ imageLinkText }}</span>
+                <div class="text-wrapper">
+                    <sw-text-editor
+                        v-model="element.config.imageText.value"
+                        :disabled="disabled"
+                        :allow-inline-data-mapping="true"
+                        :is-inline-edit="true"
+                        sanitize-input
+                        @blur="onTextBlur"
+                        @input="onTextInput"
+                    />
+                </div>
+                <sw-text-editor
+                    v-model="element.config.imageLinkText.value"
+                    :disabled="disabled"
+                    :allow-inline-data-mapping="true"
+                    :is-inline-edit="true"
+                    sanitize-input
+                    @blur="onLinkBlur"
+                    @input="onLinkInput"
+                />
             </div>
             <img
                 :src="mediaUrl"
