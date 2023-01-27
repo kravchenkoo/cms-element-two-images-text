@@ -1,0 +1,28 @@
+{% block two_images_text %}
+    {% set elements = cmsPage.sections.elements|first.blocks.elements[_key].slots.elements %}
+        {% for element in elements %}
+            {% if element.type === "image-with-text" %}
+                <div class="cms-element-image-with-text">
+                    <div class="image-text">
+                        {% if element.config["imageHeader"] %}
+                            <div class="header-wrapper">
+                                <h4>{{ element.config["imageHeader"].value|capitalize }}</h4>
+                                {% sw_icon 'arrow-right' %}
+                            </div>
+                        {% endif %}
+                        {% if element.config["imageText"] %}
+                            <p>{{ element.config["imageText"].value|capitalize }}</p>
+                        {% endif %}
+                        {% if element.config["imageLinkText"] and element.config["imageLink"] %}
+                            <a href="{{ element.config['imageLinkText'].value }}">{{ element.config["imageLinkText"].value|capitalize }}</a>
+                        {% endif %}
+                    </div>
+                    {% set tileImg = searchMedia([element.config.media.value], context.context) %}
+                    {% sw_thumbnails 'product-image' with {
+                        media: tileImg|first,
+                        sizes: sizes
+                    } %}
+                </div>
+            {% endif %}
+        {% endfor %}
+{% endblock %}

@@ -2,7 +2,7 @@
     {% set elements = cmsPage.sections.elements|first.blocks.elements[_key].slots.elements %}
     <div class="cms-element-two-images-text">
         {% for element in elements %}
-            <div class="image-wrapper">
+            <div class="cms-element-image-with-text">
                 <div class="image-text">
                     {% if element.config["imageHeader"] %}
                         <div class="header-wrapper">
