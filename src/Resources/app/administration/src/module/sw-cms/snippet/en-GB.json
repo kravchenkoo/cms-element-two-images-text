@@ -15,8 +15,8 @@
                     "placeholder": "Enter image link text..."
                 },
                 "imageLink": {
-                    "label": "Link",
-                    "placeholder": "Enter image link..."
+                    "label": "Link URL",
+                    "placeholder": "Enter image link URL..."
                 }
             },
             "element": {

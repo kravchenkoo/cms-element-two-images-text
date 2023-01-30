@@ -14,7 +14,7 @@
                             <p>{{ element.config["imageText"].value|capitalize }}</p>
                         {% endif %}
                         {% if element.config["imageLinkText"] and element.config["imageLink"] %}
-                            <a href="{{ element.config['imageLinkText'].value }}">{{ element.config["imageLinkText"].value|capitalize }}</a>
+                            <a href="{{ element.config['imageLink'].value }}">{{ element.config["imageLinkText"].value|capitalize }}</a>
                         {% endif %}
                     </div>
                     {% set tileImg = searchMedia([element.config.media.value], context.context) %}
